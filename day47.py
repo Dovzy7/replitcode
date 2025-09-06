@@ -1,6 +1,8 @@
 import random, os
 print("Welcome to the Pokemon battle simulator!")
-
+print("You will be able to choose a Pokemon and then choose a stat to battle with.")
+print("The Pokemon with the higher stat will win the battle.")
+print("The Pokemon with the higher stat will win the battle.")
 pokeOne = {"name": "DarkRai", "health": 100, "attack": 10, "defense": 5, "speed": 100}
 
 pokeTwo = {"name": "Regigigas", "health": 150, "attack": 4, "defense": 7, "speed": 30}
