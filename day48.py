@@ -18,6 +18,7 @@ while True:
   elif goAgain == "n":
     break
 
+
 file = open("highScore.txt", "a+")
 file.write(f"{scoreSheet} \n")
 file.close()
