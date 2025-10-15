@@ -1,16 +1,29 @@
-import os, time
+print("🌟HIGH SCORE TABLE🌟")
 
+
+scoreSheet = {}
 while True:
-  print("HIGH SCORE TABLE")
-  print()
-  name = input("INITIALS > ").upper()
-  score = input("SCORE > ")
-  print()
+  userName = input("Enter your name: ")
+  if userName in scoreSheet:
+    add = int(input("Add another score: "))
+    scoreSheet[userName]["Score"].append(add)
+  
+  else:
+    highScore = int(input("Enter your high score: "))
+    scoreSheet[userName] = {"name":userName, "Score":[highScore]}
+    
+  goAgain = input("Do you want to add another score to the highscore table?").strip().lower()
+  if goAgain == "y":
+    continue
+  elif goAgain == "n":
+    break
 
-  f = open("high.score", "a+")
-  f.write(f"{name} {score}\n")
-  f.close()
+file = open("highScore.txt", "a+")
+file.write(f"{scoreSheet} \n")
+file.close()
 
-  print("ADDED")
-  time.sleep(1)
-  os.system("clear")
+
+
+
+
+
