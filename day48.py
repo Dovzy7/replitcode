@@ -1,30 +1,24 @@
-print("🌟HIGH SCORE TABLE🌟")
+import os
 
+with open("highscorev2.txt","a+") as file:
+  while True:
+    name = input("Enter your initials: ").strip()
+    score = int(input("Enter your score: ")).strip()
+    file.write(f"{name}\t")
+    file.write(f"{score}\n")
+    print("Added your name and score to the file! ")
+    goAgain = input("Would you like to add another score? (y/n)").strip().lower()
+    os.system("clear")
+    if goAgain == "y":
+      continue
+    elif goAgain == "n":
+      break
+    else:
+      print("Invalid input")
+      continue 
 
-scoreSheet = {}
-while True:
-  userName = input("Enter your name: ")
-  if userName in scoreSheet:
-    add = int(input("Add another score: "))
-    scoreSheet[userName]["Score"].append(add)
   
-  else:
-    highScore = int(input("Enter your high score: "))
-    scoreSheet[userName] = {"name":userName, "Score":[highScore]}
-    
-  goAgain = input("Do you want to add another score to the highscore table?").strip().lower()
-  if goAgain == "y":
-    continue
-  elif goAgain == "n":
-    break
 
-
-file = open("highScore.txt", "a+")
-file.write(f"{scoreSheet} \n")
-file.close()
-
-
-
-
-
+  
+  
 
